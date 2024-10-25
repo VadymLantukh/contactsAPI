@@ -3,14 +3,14 @@ import cors from 'cors';
 
 import { env } from './utils/env.js';
 import { logger } from './middlewares/logger.js';
-import contactsRouter from './routers/contacts.js';
+
 import { errorHandler } from './middlewares/errorHandler.js';
 import { notFoundHandler } from './middlewares/notFoundHandler.js';
+import mainRouter from './routers/allUse.js';
 
 const PORT = Number(env('PORT', '3001'));
 
 export const setupServer = () => {
-
   const app = express();
 
   app.use(
@@ -23,7 +23,7 @@ export const setupServer = () => {
 
   app.use(logger);
 
-  app.use(contactsRouter);
+  app.use(mainRouter);
 
   app.use('*', notFoundHandler);
 
