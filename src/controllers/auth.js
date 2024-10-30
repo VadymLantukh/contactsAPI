@@ -4,6 +4,7 @@ import {
   logoutUser,
   refreshUserSession,
   registerUser,
+  ResetToken,
 } from '../services/auth.js';
 
 const setupSession = (res, session) => {
@@ -68,4 +69,8 @@ export const logoutUserController = async (req, res) => {
   res.clearCookie('refreshToken');
 
   res.status(204).send();
+};
+
+export const ResetEmailController = async (req, res) => {
+  await ResetToken();
 };
