@@ -25,7 +25,7 @@ responses:
           properties:
             status:
               type: integer
-              example: 200
+              example: 204
             message:
               type: string
               example: Successfully delete contact with id 66fe3ccfdc289bed56cc83dc!
